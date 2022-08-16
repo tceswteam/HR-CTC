@@ -1,0 +1,145 @@
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.IO;
+using System.Globalization;
+
+public partial class Default2 : System.Web.UI.Page
+{
+    protected string _EmpCode;
+
+    public string EmpCode
+    {
+
+        get
+        {
+            if (ViewState["EmpCode"] == null)
+            {
+                ViewState["EmpCode"] = Convert.ToString(Page.Request.QueryString["EmpCode"]);
+            }
+            return Convert.ToString(ViewState["EmpCode"]);
+        }
+        set { ViewState["EmpCode"] = value; }
+    }
+    protected string _FinancialYear;
+    public string FinancialYear
+    {
+        get 
+        {
+            if (ViewState["FinYear"] == null)
+            {
+                ViewState["FinYear"] = Convert.ToString(Page.Request.QueryString["FinYear"]);
+
+            }
+            return Convert.ToString(ViewState["FinYear"]);
+        }
+        set
+        {
+            ViewState["FinYear"] = value;
+            _FinancialYear = value;
+        }
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+            //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/MyStoredProcedureReport.rdl");
+            //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reports/Report3.rdlc");
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reports/ReportTest.rdlc");
+            //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reports/TestReport.rdlc");
+            //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/MyNewTestReport.rdl");
+            //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Report.rdlc");
+            DataSet ds = GetEmployeeCTC();
+            Microsoft.Reporting.WebForms.ReportDataSource datasource = new Microsoft.Reporting.WebForms.ReportDataSource("DataSet1", ds.Tables[0]);
+            //ReportViewer1.ShowParameterPrompts = false;
+            ReportViewer1.LocalReport.DataSources.Clear();
+            ReportViewer1.LocalReport.DataSources.Add(datasource);
+            //System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
+            //ps.Landscape = false;
+            //ps.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1170);
+            //ps.PaperSize.RawKind = (int)System.Drawing.Printing.PaperKind.A4;
+            //ReportViewer1.SetPageSettings(ps);
+        }
+
+    }
+    private DataSet GetEmployeeCTC()
+    {
+        string conString = ConfigurationManager.ConnectionStrings["DBConn"].ConnectionString;
+        DataSet mDSet = new DataSet();
+        SqlCommand mDbCommand = new SqlCommand();
+        SqlConnection Conn = new SqlConnection(conString);
+        try
+        {
+            if (Conn.State == ConnectionState.Closed)
+            {
+                Conn.ConnectionString = ConfigurationManager.ConnectionStrings["DBConn"].ToString();
+                Conn.Open();
+            }
+            mDbCommand.CommandText = "GETOnlyRestrucCTC_Report";
+            mDbCommand.Connection = Conn;
+            mDbCommand.CommandType = CommandType.StoredProcedure;
+            mDbCommand.Parameters.AddWithValue("@EMPID", SqlDbType.VarChar).Value = this.EmpCode;
+            mDbCommand.Parameters.AddWithValue("@FinancialYear", SqlDbType.VarChar).Value = this.FinancialYear;
+            mDSet = new DataSet();
+            SqlDataAdapter mQueryResult = new SqlDataAdapter(mDbCommand);
+            mQueryResult.Fill(mDSet);
+            return mDSet;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+    private RestructCTCDataSet_New GetData(string query)
+    {
+        string conString = ConfigurationManager.ConnectionStrings["DBConn"].ConnectionString;
+        SqlCommand cmd = new SqlCommand(query);
+        using (SqlConnection con = new SqlConnection(conString))
+        {
+            using (SqlDataAdapter sda = new SqlDataAdapter())
+            {
+                cmd.Connection = con;
+                sda.SelectCommand = cmd;
+                using (RestructCTCDataSet dsCustomers = new RestructCTCDataSet())
+                {
+                    sda.Fill(dsCustomers, "DataTable1");
+                    return dsCustomers;
+                }
+            }
+        }
+    }
+
+    //protected void btnPrintRDLC_Click(object sender, EventArgs e)
+    //{
+    //    ReportViewer1.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Local;
+
+    //    //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/MyStoredProcedureReport.rdl");
+    //    ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reports/ReportTest.rdlc");
+    //    //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Reports/TestReport.rdlc");
+    //    //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/MyNewTestReport.rdl");
+    //    //ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Report.rdlc");
+
+    //    DataSet ds = GetEmployeeCTC();
+
+    //    Microsoft.Reporting.WebForms.ReportDataSource datasource = new Microsoft.Reporting.WebForms.ReportDataSource("DataSet1", ds.Tables[0]);
+
+
+    //    //ReportViewer1.ShowParameterPrompts = false;
+    //    ReportViewer1.LocalReport.DataSources.Clear();
+    //    ReportViewer1.LocalReport.DataSources.Add(datasource);
+
+    //    //System.Drawing.Printing.PageSettings ps = new System.Drawing.Printing.PageSettings();
+    //    //ps.Landscape = false;
+    //    //ps.PaperSize = new System.Drawing.Printing.PaperSize("A4", 827, 1170);
+    //    //ps.PaperSize.RawKind = (int)System.Drawing.Printing.PaperKind.A4;
+    //    //ReportViewer1.SetPageSettings(ps);
+    //}
+}

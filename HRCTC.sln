@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "HRCTC", "HRCTC\", "{E296424B-9966-4D85-815B-9F1CC3EF9031}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{9505fa96-9923-4aa6-815b-12eb5746c882}|HRCTC.StateClass.dll;{d8df161f-da34-4145-aa97-8e51179a02bf}|HRCTCApp.BLL.dll;{52D2019B-012B-4833-848D-CDBAFD676F1D}|HRCTCApp.DAL.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_59034"
+		Debug.AspNetCompiler.PhysicalPath = "HRCTC\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59034\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_59034"
+		Release.AspNetCompiler.PhysicalPath = "HRCTC\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_59034\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59034"
+		SlnRelativePath = "HRCTC\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRCTCApp.BLL", "HRCTCApp.BLL\HRCTCApp.BLL.csproj", "{D8DF161F-DA34-4145-AA97-8E51179A02BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRCTC.StateClass", "HRCTC.StateClass\HRCTC.StateClass.csproj", "{9505FA96-9923-4AA6-815B-12EB5746C882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRCTCApp.DAL", "HRCTCApp.DAL\HRCTCApp.DAL.csproj", "{52D2019B-012B-4833-848D-CDBAFD676F1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E296424B-9966-4D85-815B-9F1CC3EF9031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E296424B-9966-4D85-815B-9F1CC3EF9031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E296424B-9966-4D85-815B-9F1CC3EF9031}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E296424B-9966-4D85-815B-9F1CC3EF9031}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D8DF161F-DA34-4145-AA97-8E51179A02BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8DF161F-DA34-4145-AA97-8E51179A02BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8DF161F-DA34-4145-AA97-8E51179A02BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8DF161F-DA34-4145-AA97-8E51179A02BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9505FA96-9923-4AA6-815B-12EB5746C882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9505FA96-9923-4AA6-815B-12EB5746C882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9505FA96-9923-4AA6-815B-12EB5746C882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9505FA96-9923-4AA6-815B-12EB5746C882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D2019B-012B-4833-848D-CDBAFD676F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D2019B-012B-4833-848D-CDBAFD676F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D2019B-012B-4833-848D-CDBAFD676F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D2019B-012B-4833-848D-CDBAFD676F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB56C8BA-530E-4E24-A54E-A003B3A703E6}
+	EndGlobalSection
+EndGlobal

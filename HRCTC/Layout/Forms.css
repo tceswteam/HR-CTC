@@ -1,0 +1,318 @@
+﻿body {
+   color :black;
+}
+
+.form-body {
+    padding :5px;
+}
+
+ Span, Input, Select, textarea
+{
+	font-family: verdana,arial;
+	font-size: 11px;
+    }
+
+.Form_MainTable {
+    margin-top: 3px;
+    margin-left: 3px;
+    margin-bottom : 3px;
+    margin-right : 3px;
+    font-family: Verdana;
+    width :99%;
+    border :solid 1px;
+    border-color:#848484;
+}
+
+.from-table {
+    width: 99%;
+    border: solid 0px rgb(205,205,205);
+}
+
+.form-hdr
+{
+	margin-top: 5px;
+	font-weight: bold;
+	font-family: Sans-Serif;
+	font-size: 17px;
+	padding: 5px;
+	padding-right :5px;
+	background-color: rgb(230,230,230);
+	border-bottom: solid 1px rgb(200,200,200);
+	border-right: solid 1px rgb(200,200,200);
+}
+.form-View-Hdr
+{
+    margin-top: 5px;
+	font-weight: bold;
+	font-family: Sans-Serif;
+	font-size: 17px;
+	padding: 5px;
+	padding-right :5px;
+	border-bottom: solid 1px rgb(200,200,200);
+	 
+}
+
+.form-status
+{
+	color: Red !important;
+	font-weight: normal;
+	font-size: 12px;
+	margin-top:2px;
+}
+
+.form-currAppr
+{
+	color: green !important;
+	font-weight: normal;
+	/*font-size: 12px;*/
+	margin-top:2px;
+}
+
+.field-val-summ {
+    color:red ;
+}
+
+.form-ref-dtls
+{
+    margin-top:1px;
+	margin-bottom:1px;
+}
+
+.form-ref-dtls-val
+{
+	color:Navy;
+}
+
+.FormHeader {
+    text-align: left;
+    font-size: 20px !important;
+    font-weight: bold;
+    color :#2F4246  !important;
+}
+
+form-hdr
+{
+	margin-top: 5px;
+	font-weight: bold;
+	font-family: Sans-Serif;
+	font-size: 17px;
+	padding: 5px;
+	padding-right :5px;
+	background-color: rgb(230,230,230);
+	border-bottom: solid 1px rgb(200,200,200);
+	border-right: solid 1px rgb(200,200,200);
+}
+
+.form-actbar
+{
+	border-bottom: solid 1px rgb(180,180,180);
+	padding-bottom: 2px;
+	padding-right :5px;
+}
+
+.form-actbar input
+{
+	display: inline-block;
+	line-height: 1;
+	padding: 7px 10px;
+	text-decoration: none;
+	font-weight: normal;
+	color: #fff;
+	background-color: #39c;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	padding-right: 10px;
+	border1: solid 1px silver;
+	padding: 5px;
+	border: 0px none;
+	cursor:pointer;
+}
+
+.FormSubHeader {
+    
+    text-align: Left;
+    font-size: 13px !important;
+    font-weight: bold;
+}
+
+.FormLabelMsg {
+    text-align: Left;
+    font-size: 10px !important;
+    color :navy;
+    font-weight: bold;
+}
+
+.form-fld-lbl-hr-line {
+    text-align: left;
+    /*background-color: rgb(245,245,245);
+     background-color: yellow;*/
+    /*background-color: rgb(230,234,247);*/
+    background-image: url('Images/Line.jpg');
+
+    font-size: 11px !important;
+    font-weight: bold;
+}
+.form-fld-lbl
+{    text-align:left;  
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     /*background-color: rgb(245,245,245);
+     background-color: yellow;*/
+     /*background-color: rgb(230,234,247);*/
+     font-size: 12px !important;
+     
+}
+
+.form-fld-val
+{
+     text-align:left;  
+     font-size: 11px;
+     padding : 4px;
+
+}
+
+.form-fld-val input, select, textarea {
+    text-shadow: 0 1px 0 #FFF;    
+    outline: none;    
+    background: -webkit-gradient(linear, left top, left bottom, from(#BCBCBE), to(#FFF));    
+    background: -moz-linear-gradient(top, #BCBCBE, #FFF);    
+    -webkit-border-radius: 3px;    
+    -moz-border-radius: 3px;    
+    border-radius: 3px;    
+    border: 1px solid #848484 !important;    
+    -webkit-box-shadow: 1px 1px 0 #EFEFEF;    
+    -moz-box-shadow: 1px 1px 0 #efefef;    
+    box-shadow: 1px 1px 0 #EFEFEF;
+}
+
+.textbox:focus {    border-color: #C9C9C9;    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 8px;}  
+
+.Required {
+    color:red;
+    font-size: 10px;
+}
+
+.view-header
+{
+    text-align: left;
+    padding: 3px;
+    padding-left: 4px;
+    background-color: rgb(236,236,236);
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.view-header td, view-header th
+{
+    padding: 3px;
+    text-align: center;
+    border: solid 1px rgb(222,222,222) !important;
+}
+
+.view-item td
+{
+    padding: 3px;
+    padding-left: 4px;
+    vertical-align: top;
+    border: solid 1px rgb(223,223,223) !important;
+}
+
+.view-alt-item td
+{
+    padding: 3px;
+    padding-left: 4px;
+    vertical-align: top;
+    background-color: rgb(245,245,245);
+    border: solid 1px rgb(223,223,223) !important;
+}
+
+.GridPaging
+{
+	background-color: white;
+	border: 0px;
+}
+.GridPaging TD
+{
+	border: 0px;
+}
+
+.ActionBarBG
+{
+	background-image: url('../Img/ActionBar/actnbrhdrgif.gif');
+	background-repeat: repeat-x;
+	border: solid 1px rgb(165,162,123);
+	padding-top: 2px;
+    height: 21px;
+}
+
+.AddressText {
+    margin-top : 1px;
+    margin-bottom : 1px;
+}
+
+.NumberValue{
+    text-align : right;
+    padding-right:2px;
+}
+
+.numerictextboxlabel{
+   display : inline;
+   display : block;
+   text-align:right;
+   
+}
+.alphanumerictextboxlabel {
+    display: inline;
+    display: block;
+    text-align: left;
+}
+
+.watermarked {
+    background-color:lightyellow;
+    font-size: 10px;
+    font-style :italic;
+}
+
+.autocomplete_completionListElement 
+{  
+	margin : 0px!important;
+	background-color : inherit;
+	color : windowtext;
+	border : buttonshadow;
+	border-width : 1px;
+	border-style : solid;
+	cursor : 'default';
+	overflow : auto;
+	height : 200px;
+    text-align : left; 
+    list-style-type : none;
+}
+
+/* AutoComplete highlighted item */
+
+.autocomplete_highlightedListItem
+{
+	background-color: #ffff99;
+	color: black;
+	padding: 1px;
+}
+
+/* AutoComplete item */
+
+.autocomplete_listItem 
+{
+	background-color : window;
+	color : windowtext;
+	padding : 1px;
+}
+
+/*--Hide the Root in Top Nav--*/
+.s4-tn li.static > a{ 
+display: none !important; 
+} 
+.s4-tn li.static > ul a{ 
+display: block !important; 
+}
+
+
